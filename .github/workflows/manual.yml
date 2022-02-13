@@ -33,7 +33,7 @@ jobs:
           git submodule update
           cd fluxDemo
           git status
-          git pull origin main
+          git pull origin main --rebase=false --ff-only
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit -a -m "${{ github.event.inputs.message }}"
