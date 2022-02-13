@@ -1,0 +1,3 @@
+[submodule "fluxDemo"]
+	path = fluxDemo
+	url = git@github.com:AndrzejPw/fluxDemo.git
