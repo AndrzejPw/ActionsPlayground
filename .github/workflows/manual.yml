@@ -30,7 +30,7 @@ jobs:
         submodules: true
 #        token: ${{ secrets.GITHUB_TOKEN }}
     - run: |
-          git submodule init
+          git status
           git submodule update --remote --merge
           cd fluxDemo
           git status
