@@ -39,6 +39,6 @@ jobs:
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit -a -m "${{ github.event.inputs.message }}"
-          git branch --set-upstream-to origin/feature/i18n-update
+          git branch --set-upstream-to origin/feature/i18n-update feature/i18n-update
           git push
 
