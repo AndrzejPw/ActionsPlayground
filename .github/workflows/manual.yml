@@ -26,8 +26,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.ACCESS_TOKEN }}
+      # with:
+        # token: ${{ secrets.ACCESS_TOKEN }}
         # submodules: recursive
     - name: Send greeting
       run: echo "Hello ${{ github.event.inputs.name }}"
