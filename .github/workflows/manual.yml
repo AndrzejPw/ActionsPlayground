@@ -34,10 +34,6 @@ jobs:
           git submodule deinit --all -f
           git submodule init
           git submodule update --remote --merge
-          cd fluxDemo
-          git status
-          git checkout main
-          git pull origin main --rebase=false --ff-only
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit -a -m "${{ github.event.inputs.message }}"
