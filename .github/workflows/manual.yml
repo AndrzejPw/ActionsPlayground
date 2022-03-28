@@ -37,8 +37,8 @@ jobs:
           git config pull.rebase false
           git pull origin main --allow-unrelated-histories
           cd ..
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
           git commit -a -m "${{ github.event.inputs.message }}"
           git push -u origin feature/i18n-update
 
