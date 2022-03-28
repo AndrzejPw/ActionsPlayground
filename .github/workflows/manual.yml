@@ -30,15 +30,13 @@ jobs:
         submodules: true
 #        token: ${{ secrets.GITHUB_TOKEN }}
     - run: |
-          git status
+          git config --global user.name github-actions
+          git config --global user.email github-actions@github.com
           git branch feature/i18n-update
           git checkout feature/i18n-update
           cd fluxDemo
           git config pull.rebase false
           git pull origin main --allow-unrelated-histories
           cd ..
-          git config --global user.name github-actions
-          git config --global user.email github-actions@github.com
           git commit -a -m "${{ github.event.inputs.message }}"
           git push -u origin feature/i18n-update
-
