@@ -13,8 +13,8 @@ on:
         default: 'i18n pointer updated to latest'
         required: true
 permissions:
- contents: write
- pull-requests: write
+  contents: write
+#  pull-requests: write
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -28,15 +28,14 @@ jobs:
     - uses: actions/checkout@v3
       with:
         submodules: true
-#        token: ${{ secrets.GITHUB_TOKEN }}
     - run: |
-          git config --global user.name github-actions
-          git config --global user.email github-actions@github.com
+          git status
           git branch feature/i18n-update
           git checkout feature/i18n-update
-          cd fluxDemo
-          git config pull.rebase false
-          git pull origin main --allow-unrelated-histories
-          cd ..
+          git submodule deinit --all -f
+          git submodule init
+          git submodule update --remote --merge
+          git config user.name github-actions
+          git config user.email github-actions@github.com
           git commit -a -m "${{ github.event.inputs.message }}"
           git push -u origin feature/i18n-update
