@@ -33,7 +33,7 @@ jobs:
           git status
           git branch feature/i18n-update
           git checkout feature/i18n-update
-          git submodule update --remote --merge
+          git submodule update --remote --merge --allow-unrelated-histories
           git config user.name github-actions
           git config user.email github-actions@github.com
           git commit -a -m "${{ github.event.inputs.message }}"
