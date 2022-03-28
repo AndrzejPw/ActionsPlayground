@@ -34,7 +34,7 @@ jobs:
           git branch feature/i18n-update
           git checkout feature/i18n-update
           cd fluxDemo
-          git config pull.rebase true
+          git config pull.rebase false
           git pull origin main --allow-unrelated-histories
           git config user.name github-actions
           git config user.email github-actions@github.com
